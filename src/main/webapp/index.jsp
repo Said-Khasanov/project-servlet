@@ -1,4 +1,4 @@
-<%@ page import="com.tictactoe.Sign" %>
+<%@ page import="com.tictactoe.model.Sign" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -37,19 +37,21 @@
         <c:set var="CROSSES" value="<%=Sign.CROSS%>"/>
         <c:set var="NOUGHTS" value="<%=Sign.NOUGHT%>"/>
 
-        <c:if test="${sessionScope.winner == CROSSES}">
-            <h1>CROSSES WIN!</h1>
-            <button onclick="restart()">Start again</button>
-        </c:if>
-        <c:if test="${sessionScope.winner == NOUGHTS}">
-            <h1>NOUGHTS WIN!</h1>
-            <button onclick="restart()">Start again</button>
-        </c:if>
-        <c:if test="${sessionScope.draw}">
-            <h1>IT'S A DRAW</h1>
-            <br>
-            <button onclick="restart()">Start again</button>
-        </c:if>
+        <c:choose>
+            <c:when test="${sessionScope.winner == CROSSES}">
+                <h1>CROSSES WIN!</h1>
+                <button id="restart-button" onclick="restart()">Start again</button>
+            </c:when>
+            <c:when test="${sessionScope.winner == NOUGHTS}">
+                <h1>NOUGHTS WIN!</h1>
+                <button id="restart-button" onclick="restart()">Start again</button>
+            </c:when>
+            <c:when test="${sessionScope.draw}">
+                <h1>IT'S A DRAW</h1>
+                <br>
+                <button id="restart-button" onclick="restart()">Start again</button>
+            </c:when>
+        </c:choose>
     </div>
 </div>
 

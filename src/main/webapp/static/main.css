@@ -14,3 +14,25 @@ td {
     text-align: center;
     empty-cells: show;
 }
+
+.winner {
+    text-align: center;
+}
+
+#restart-button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    border-radius:6px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#restart-button:hover {
+    background-color: white;
+    border: 2px solid #04AA6D;
+    color: black;
+}

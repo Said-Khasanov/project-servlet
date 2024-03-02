@@ -1,6 +1,5 @@
-package com.tictactoe;
+package com.tictactoe.controller;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,5 +14,4 @@ public class RestartServlet extends HttpServlet {
         req.getSession().invalidate();
         resp.sendRedirect("/start");
     }
-
 }
